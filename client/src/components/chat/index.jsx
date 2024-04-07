@@ -1,6 +1,6 @@
 import React from "react";
 import { useMultiChatLogic, MultiChatSocket, MultiChatWindow } from "react-chat-engine-advanced";
-import Header from "./components/customHeader";
+import Header from "../customHeader";
 
 const Chat = () => {
   const chatProps = useMultiChatLogic(import.meta.env.VITE_PROJECT_ID, "testuser", "7654d");
