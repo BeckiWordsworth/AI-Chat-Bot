@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import { XMarkIcon } from "@heroicons/react/24/solid";
+import { PaperAirplaneIcon, PaperClipIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import Dropzone from "react-dropzone";
 
-const StandardMessageForm = () => {
+const StandardMessageForm = ({ props, activeChat }) => {
   const [message, setMessage] = useState("");
   const [attachment, setAttachment] = useState("");
   const [preview, setPreview] = useState("");
 
   const handleChange = (e) => setMessage(e.target.value);
+  const handleSubmit = async () => {};
 
   return (
     <div className="message-form-container">
@@ -47,7 +48,23 @@ const StandardMessageForm = () => {
               setAttachment(acceptedFiles[0]);
               setPreview(URL.createObjectURL(acceptedFiles[0]));
             }}
-          ></Dropzone>
+          >
+            {({ getRootProps, getInputProps, open }) => (
+              <div {...getRootProps()}>
+                <input {...getInputProps()} />
+                <PaperClipIcon className="message-form-icon-clip" onClick={open} />
+              </div>
+            )}
+          </Dropzone>
+
+          <hr className="vertical-line" />
+          <PaperAirplaneIcon
+            className="message-form-icon-airplane"
+            onClick={() => {
+              setPreview("");
+              handleSubmit();
+            }}
+          />
         </div>
       </div>
     </div>
