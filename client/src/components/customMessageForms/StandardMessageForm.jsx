@@ -32,13 +32,13 @@ const StandardMessageForm = ({ props, activeChat }) => {
       {preview && (
         <div className="message-form-preview">
           <img
-            alt="message-form-preview-image"
+            alt="message-form-preview"
             className="message-form-preview-image"
             src={preview}
             onLoad={() => URL.revokeObjectURL(preview)}
           />
           <XMarkIcon
-            className="message-from-icon-x"
+            className="message-form-icon-x"
             onClick={() => {
               setPreview("");
               setAttachment("");
@@ -47,7 +47,7 @@ const StandardMessageForm = ({ props, activeChat }) => {
         </div>
       )}
       <div className="message-form">
-        <div className="message-from-input-container">
+        <div className="message-form-input-container">
           <input
             className="message-form-input"
             type="text"
