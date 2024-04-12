@@ -4,6 +4,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import morgan from "morgan";
 import helmet from "helmet";
+import { Configuration, OpenAIApi } from "openai";
 
 /* CONFIGURATION */
 
@@ -16,6 +17,13 @@ app.use(morgan("common"));
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
+
+/* OPEN AI CONFIGURATION */
+
+const configuration = new Configuration({
+  apiKey: process.env.OPEN_API_KEY,
+});
+export const openai = new OpenAIApi(configuration);
 
 /* SERVER SETUP */
 
