@@ -6,6 +6,7 @@ const StandardMessageForm = ({ props, activeChat }) => {
   const [attachment, setAttachment] = useState("");
 
   const handleChange = (e) => setMessage(e.target.value);
+
   const handleSubmit = async () => {
     const date = new Date()
       .toISOString()
