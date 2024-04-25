@@ -12,4 +12,10 @@ export const store = configureStore({
   middleware: (getDefault) => getDefault().concat(api.middleware),
 });
 
-ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+setupListeners(store.dispatch);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <Provider store={store}>
+    <App />
+  </Provider>
+);
