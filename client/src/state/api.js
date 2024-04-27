@@ -5,13 +5,21 @@ export const api = createApi({
   reducerPath: "main",
   tagTypes: [],
   endpoints: (build) => ({
-    postAiText: build.mutation({}),
-    query: (payload) => ({
-      url: "openai/text",
-      method: "POST",
-      body: payload,
+    postAiText: build.mutation({
+      query: (payload) => ({
+        url: "openai/text",
+        method: "POST",
+        body: payload,
+      }),
+    }),
+    postAiCode: build.mutation({
+      query: (payload) => ({
+        url: "openai/code",
+        method: "POST",
+        body: payload,
+      }),
     }),
   }),
 });
 
-export const { usePostAiTextMutation } = api;
+export const { usePostAiTextMutation, usePostAiCodeMutation } = api;
