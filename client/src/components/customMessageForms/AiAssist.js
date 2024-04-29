@@ -46,6 +46,13 @@ const AiAssist = ({ props, activeChat }) => {
 
   const debouncedValue = useDebounce(message, 1000);
 
+  useEffect(() => {
+    if (debouncedValue) {
+      const form = { text: message};
+      triggerAssist(form)
+    }
+  }, [debouncedValue]);
+
   return (
     <MessageFormUI
       setAttachment={setAttachment}
