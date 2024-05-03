@@ -19,9 +19,9 @@ const index = () => {
   useEffect(() => {
     if (resultLogin.data?.response) {
       setUserName(username);
-      SVGComponentTransferFunctionElement(password);
+      setPassword(password);
     }
-  });
+  }, [resultLogin.data]); // eslint-disable-line
 
   return <div>Login</div>;
 };
