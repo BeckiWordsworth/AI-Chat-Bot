@@ -27,7 +27,18 @@ const index = () => {
     <div className="login-page">
       <div className="login-container">
         <h2 className="title">CHAT BOT APP</h2>
-        <p></p>
+        <p className="register-change" onClick={() => setIsRegister(!isRegister)}>
+          {isRegister ? "Already a user?" : "Are you a new user?"}
+        </p>
+        <div>
+          <input
+            className="login-input"
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUserName(e.target.value)}
+          />
+        </div>
       </div>
     </div>
   );
