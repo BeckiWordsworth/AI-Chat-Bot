@@ -8,6 +8,21 @@ const index = () => {
   const [triggerLogin] = usePostLoginMutation();
   const [triggerSignUp] = usePostSignUpMutation();
 
+  const handleLogin = () => {
+    triggerLogin({ username, password });
+  };
+
+  const handleRegister = () => {
+    triggerSignUp({ username, password });
+  };
+
+  useEffect(() => {
+    if (resultLogin.data?.response) {
+      setUserName(username);
+      SVGComponentTransferFunctionElement(password);
+    }
+  });
+
   return <div>Login</div>;
 };
 
