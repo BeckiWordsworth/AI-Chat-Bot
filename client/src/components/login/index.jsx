@@ -23,7 +23,14 @@ const index = () => {
     }
   }, [resultLogin.data]); // eslint-disable-line
 
-  return <div>Login</div>;
+  return (
+    <div className="login-page">
+      <div className="login-container">
+        <h2 className="title">CHAT BOT APP</h2>
+        <p></p>
+      </div>
+    </div>
+  );
 };
 
 export default index;
