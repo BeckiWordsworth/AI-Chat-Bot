@@ -38,6 +38,13 @@ const index = () => {
             value={username}
             onChange={(e) => setUserName(e.target.value)}
           />
+          <input
+            className="login-input"
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
         </div>
       </div>
     </div>
