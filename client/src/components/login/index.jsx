@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { usePostLoginMutation, usePostSignUpMutation } from "@/state/api";
 
-const index = () => {
-  const [isRegister, setRegister] = useState(false);
+const index = ({ setSecret, setUser }) => {
+  const [isRegister, setIsRegister] = useState(false);
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [triggerLogin] = usePostLoginMutation();
@@ -18,8 +18,8 @@ const index = () => {
 
   useEffect(() => {
     if (resultLogin.data?.response) {
-      setUserName(username);
-      setPassword(password);
+      setUser(username);
+      setSecret(password);
     }
   }, [resultLogin.data]); // eslint-disable-line
 
