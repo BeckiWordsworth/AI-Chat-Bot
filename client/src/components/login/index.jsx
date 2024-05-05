@@ -46,6 +46,17 @@ const index = ({ setSecret, setUser }) => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
+        <div className="login-actions">
+          {isRegister ? (
+            <button type="button" onClick={handleRegister}>
+              Register
+            </button>
+          ) : (
+            <button type="button" onClick={handleLogin}>
+              Login
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );
