@@ -6,6 +6,7 @@ import morgan from "morgan";
 import helmet from "helmet";
 import { Configuration, OpenAIApi } from "openai";
 import openAiRoutes from "./routes/openai.js";
+import authRoutes from "./routes.auth.js";
 
 /* CONFIGURATION */
 
@@ -29,6 +30,7 @@ export const openai = new OpenAIApi(configuration);
 /* ROUTES */
 
 app.use("/openai", openAiRoutes);
+app.use("/auth", authRoutes);
 
 /* SERVER SETUP */
 
