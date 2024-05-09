@@ -23,7 +23,7 @@ router.post("/signup", async (req, res) => {
         secret: password,
       },
       {
-        headers: { "Private-Key": process.env.privateKey },
+        headers: { "Private-Key": process.env.PRIVATE_KEY },
       }
     );
 
